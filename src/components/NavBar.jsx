@@ -1,4 +1,5 @@
 import "../css/NavBar.css";
+import CartWidget from "./CartWidget";
 
 const NavBar = () => {
   return (
@@ -17,7 +18,7 @@ const NavBar = () => {
           <input type="text" name="search" placeholder="Buscar" />
           <button><i class="ri-search-line"></i></button>
         </form> </div>
-        <div className="navbar__icons--item"> <a href="http://globo.com"><i class="ri-shopping-cart-line"></i></a> </div>
+        <CartWidget />
         <div className="navbar__icons--item"> <a href="http://globo.com"><i class="ri-user-3-line"></i></a> </div>
       </div>
 
