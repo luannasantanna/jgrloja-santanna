@@ -1,13 +1,13 @@
 import './App.css';
 import './index.css';
-import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import TagTitulo from './components/TagTitulo';
+import HeroHearder from './components/HeroHeader';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <HeroHearder />
 
       <TagTitulo titulo={'Best Sellers'} subtitulo={'2024'} />
       <section className='container'>

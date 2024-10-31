@@ -1,0 +1,33 @@
+.banner__container {
+    width: 100%;
+    height: 800px;
+    padding: 0;
+
+    background-image: url(../images/banner-loja.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    margin-bottom: 5rem;
+}
+
+
+@media (max-width: 1300px) {
+    .banner__container {
+        background-image: url(../images/banner-loja2.png);
+    }
+}
+
+@media (max-width: 800px) {
+    .banner__container {
+        background-image: url(../images/banner-loja-tablet.png);
+        max-height: 680px;
+    }
+}
+
+@media (max-width: 500px) {
+    .banner__container {
+        background-image: url(../images/banner-loja-mobile.png);
+        max-height: 780px;
+    }
+}

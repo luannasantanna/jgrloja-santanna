@@ -3,6 +3,14 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 7rem;
+
+    z-index: 999;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 nav  ul, .navbar__icons{
@@ -12,12 +20,14 @@ nav  ul, .navbar__icons{
 
 nav ul li a {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     transition: .3s ease;
     padding: .5rem 1rem;
+    color: var(--white);
 
     &:hover {
         color: var(--red);
+        font-weight: 700;
     }
 }
 
@@ -27,14 +37,33 @@ nav ul li a {
 }
 
 .navbar__icons input {
-    border: 1px solid var(--red);
+    border: .5px solid var(--red);
     padding: .5rem;
     border-right: 0;
     outline: none;
-    color: var(--black);
+    color: var(--white);
+    background-color: transparent;
 }
 
-.navbar__icons form button {
+.navbar__icons input::placeholder {
+    color: var(--gray);
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.navbar__icons button {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.navbar__icons--item a:hover, .navbar__icons button:hover {
+    color: var(--red);
+}
+
+button.ativa {
     width: 2.5rem;
     height: 2rem;
     background-color: var(--red);
@@ -45,10 +74,25 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     margin-right: 1rem;
 }
 
-.navbar__icons--item a:hover {
-    color: var(--red);
+.navbar__icons--item a {
+    color: var(--white);
+}
+
+@media (max-width: 800px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    nav ul li a {
+        padding: .5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    nav ul {
+        display: none;
+    }
 }

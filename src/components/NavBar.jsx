@@ -1,7 +1,19 @@
+import { useState } from "react";
 import "../css/NavBar.css";
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
+
+  const [mostrarInput, setMostrarInput] = useState(false);
+  const [btnClass, setBtnClass] = useState('');
+
+  const ativaInput = (e) => {
+    e.preventDefault();
+    setMostrarInput(!mostrarInput);
+    setBtnClass(mostrarInput ? '' : 'ativa')
+  };
+
+
   return (
     <header>
       <div className="logo">JGR | team store</div>
@@ -14,15 +26,17 @@ const NavBar = () => {
       </nav>
 
       <div className="navbar__icons">
-        <div> <form>
-          <input type="text" name="search" placeholder="Buscar" />
-          <button><i class="ri-search-line"></i></button>
-        </form> </div>
+
+        <div>
+          <form>
+            {mostrarInput && <input type="text" name="search" placeholder="Buscar" />}
+            <button className={btnClass} onClick={ativaInput}><i class="ri-search-line"></i></button>
+          </form>
+        </div>
+
         <CartWidget />
         <div className="navbar__icons--item"> <a href="http://globo.com"><i class="ri-user-3-line"></i></a> </div>
       </div>
-
-      <div className="menu__hamburguer"></div>
     </header>
   );
 }
