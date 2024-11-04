@@ -1,0 +1,13 @@
+.item__count--icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.mensagem__info--limite {
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--red);
+    padding: .5rem 0 0 0;
+}

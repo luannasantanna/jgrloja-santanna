@@ -11,12 +11,15 @@ function App() {
       <HeroHearder />
       <TagPromocao text={'Promoção válida até 27/03/2024'} />
 
-      <TagTitulo titulo={'Best Sellers'} subtitulo={'2024'} />
       <section className='container'>
-        <ItemListContainer itemTitulo={'Toyota Racing Development - Military Green'} itemPreco={'125,00'} />
-        <ItemListContainer itemTitulo={'Toyota Racing Development - Military Green'} itemPreco={'125,00'} />
-        <ItemListContainer itemTitulo={'Toyota Racing Development - Military Green'} itemPreco={'125,00'} />
-        <ItemListContainer itemTitulo={'Toyota Racing Development - Military Green'} itemPreco={'125,00'} />
+        <TagTitulo titulo={'Best Sellers'} subtitulo={'2024'} />
+        <div className='container__content'>
+          <ItemListContainer itemTitulo={'Toyota Racing Development - Military Green'} itemPreco={'125,00'} />
+          <ItemListContainer itemTitulo={'Toyota Racing Development - Military Green'} itemPreco={'125,00'} />
+          <ItemListContainer itemTitulo={'Toyota Racing Development - Military Green'} itemPreco={'125,00'} />
+          <ItemListContainer itemTitulo={'Toyota Racing Development - Military Green'} itemPreco={'125,00'} />
+        </div>
+
       </section>
     </div>
   );
