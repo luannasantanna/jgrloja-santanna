@@ -1,14 +1,16 @@
-import "../css/ItemListContainer.css"
-import ItemCount from "./ItemCount";
+import TagTitulo from "./TagTitulo";
+import ItemList from "./ItemList";
 
-const ItemListContainer = ({ itemTitulo, itemPreco }) => {
+const ItemListContainer = () => {
     return (
-        <div className="best-sellers">
-            <img src="https://www.shopjgr.com/cdn/shop/products/K2813-2up.jpg?v=1705956756" alt="" />
-            <h5>{itemTitulo}</h5>
-            <p>R$: {itemPreco}</p>
-            <ItemCount stock={[1, 2, 3, 4, 5]} />
-        </div>
+
+        <section className='container'>
+            <TagTitulo titulo={'Best Sellers'} subtitulo={'2024'} />
+            <div className='container__content'>
+                <ItemList />
+            </div>
+        </section>
+
     );
 }
 

@@ -1,4 +1,4 @@
-.best-sellers {
+.card__item {
     max-width: 295px;
 
     display: flex;
@@ -10,16 +10,15 @@
     transition: .3s ease;
 }
 
-.best-sellers:hover {
+.card__item:hover {
     transform: scale(1.08);
     color: var(--red);
 }
 
-.best-sellers img {
+.card__item img {
     width: 100%;
 }
 
-.best-sellers p {
+.card__item p {
     color: var(--gray);
 }
-
