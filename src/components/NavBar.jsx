@@ -30,12 +30,12 @@ const NavBar = () => {
         <div>
           <form>
             {mostrarInput && <input type="text" name="search" placeholder="Buscar" />}
-            <button className={btnClass} onClick={ativaInput}><i class="ri-search-line"></i></button>
+            <button className={btnClass} onClick={ativaInput}><i className="ri-search-line"></i></button>
           </form>
         </div>
 
         <CartWidget />
-        <div className="navbar__icons--item"> <a href="http://globo.com"><i class="ri-user-3-line"></i></a> </div>
+        <div className="navbar__icons--item"> <a href="http://globo.com"><i className="ri-user-3-line"></i></a> </div>
       </div>
     </header>
   );
