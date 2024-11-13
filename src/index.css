@@ -9,7 +9,7 @@
 }
 
 * {
-  padding: 0; 
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
@@ -61,14 +61,34 @@ p {
 
 .container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0 7rem;
+  margin-bottom: 3rem;
 }
 
 .container__content {
+  max-width: 1000px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: end;
+  justify-content: start;
   gap: 2rem;
+
+  overflow: auto;
+  padding: 2rem 0;
+  cursor: pointer;
+}
+
+.container__content::-webkit-scrollbar {
+  height: .2rem;
+  width: 2rem;
+}
+
+.container__content::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  border-radius: .5rem;
 }
 
 @media (max-width: 1300px) {

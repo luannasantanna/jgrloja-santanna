@@ -10,7 +10,7 @@
     line-height: 120%;
     color: var(--red);
 
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     background-color: transparent;
     border: 2px solid var(--red);
     border-radius: .5rem;
