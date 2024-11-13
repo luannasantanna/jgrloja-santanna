@@ -1,0 +1,25 @@
+.container__size {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+}
+
+.container__size li {
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--gray);
+
+    padding: .3rem .8rem;
+    border: 2px solid var(--red);
+    cursor: pointer;
+}
+
+.container__size li:hover {
+    background: var(--gradient);
+    color: var(--white);
+}

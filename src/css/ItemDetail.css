@@ -1,0 +1,25 @@
+.container__item-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 6rem auto;
+}
+
+.container__item-detail img {
+    max-width: 450px;
+}
+
+.content__item-detail {
+    max-width: 670px;
+    text-align: start;
+}
+
+.item__qta-size-btn {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin: 3rem auto;
+    text-align: end;
+}
+

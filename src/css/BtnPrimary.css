@@ -1,0 +1,12 @@
+.btn__primary {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 140%;
+    color: var(--white);
+    background: var(--gradient);
+    border: none;
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
