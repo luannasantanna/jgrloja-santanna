@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import TagTitulo from "./TagTitulo";
-import ItemList from "./ItemList";
-import BestSellers from "../service/BestSellers.mock";
+import TagTitulo from "../components/TagTitulo";
+import ItemList from "../components/ItemList";
+import JGRCollection from "../service/JGRCollection.mock";
 
 const ItemListContainer = () => {
     const [produtos, setProdutos] = useState();
@@ -10,7 +10,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         const promesaProdutos = new Promise((resolve) => {
             setTimeout(() => {
-                resolve(BestSellers);
+                resolve(JGRCollection);
             }, 5000);
         });
 
@@ -30,7 +30,7 @@ const ItemListContainer = () => {
 
     return (
         <section className='container'>
-            <TagTitulo titulo={'Best Sellers'} subtitulo={'2024'} />
+            <TagTitulo titulo={'JGR Collection'} subtitulo={'2024'} />
             <div className='container__content'>
                 <ItemList produtos={produtos} />
             </div>

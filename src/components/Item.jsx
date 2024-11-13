@@ -1,13 +1,13 @@
 import "../css/Item.css";
-import ItemCount from "./ItemCount";
+import BtnSecondary from "./BtnSecondary";
 
-const Item = ({ id, name, price, stock }) => {
+const Item = ({ id, name, price, image }) => {
     return (
         <div className="card__item" key={id}>
-            <img src="https://www.shopjgr.com/cdn/shop/products/K2813-2up.jpg?v=1705956756" alt="" />
+            <img src={image} alt="" />
             <h5>{name}</h5>
-            <p>R$: {price}</p>
-            <ItemCount stock={stock} />
+            <p>R$: {price},00</p>
+            <BtnSecondary text={'Detalhes'} />
         </div>
     );
 }

@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
+import ItemDetail from "../components/ItemDetail";
 import JGRCollection from "../service/JGRCollection.mock";
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = () => {
-    const [detalhes, setDetalhes] = useState([]);
+    const [detalhes, setDetalhes] = useState();
+    const { id } = useParams();
 
     useEffect(() => {
+
         const getItem = new Promise((resolve) => {
             setTimeout(() => {
-                resolve(JGRCollection);
-            }, 4000);
+                const item = JGRCollection.find((produto) => produto.id === parseInt(id));
+                resolve(item);
+            }, 2000);
         });
 
         getItem
@@ -20,12 +24,15 @@ const ItemDetailContainer = () => {
             .catch((error) => {
                 console.log('erro ao carregar detalhes do produto', error);
             });
-    }, []);
+    }, [id]);
 
+    if(!detalhes) {
+        return <div>Carregando...</div>
+    }
 
     return (
         <>
-            {detalhes.map((item) => (<ItemDetail key={item.id} {...item}/>))}
+            {<ItemDetail {...detalhes} />}
         </>
     )
 }
