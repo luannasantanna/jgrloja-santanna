@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
-import TagTitulo from "../components/TagTitulo";
+import TagTitulo from "./TagTitulo";
 import ItemList from "../components/ItemList";
 import JGRCollection from "../service/JGRCollection.mock";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
-    const [produtos, setProdutos] = useState();
+    const [produtos, setProdutos] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { filter } = useParams();
+
+    const produtosFiltrados = (categoria) => {
+        return JGRCollection.filter((produto) =>
+            produto.category === categoria
+        );
+    };
 
     useEffect(() => {
         const promesaProdutos = new Promise((resolve) => {
@@ -23,6 +31,14 @@ const ItemListContainer = () => {
                 console.error('erro ao carregar produtos', error);
             });
     }, []);
+
+    useEffect(() => {
+        if (filter) {
+          setProdutos(produtosFiltrados(filter));
+        } else {
+          setProdutos(JGRCollection);
+        }
+      }, [filter]);
 
     if (loading) {
         return <div>Carregando ...</div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../css/NavBar.css";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -16,10 +17,10 @@ const NavBar = () => {
 
   return (
     <header>
-      <div className="logo">JGR | team store</div>
+      <Link to='/' className="logo">JGR | team store</Link>
       <nav>
         <ul>
-          <li> <a href="http://globo.com">Legado Gibbs</a> </li>
+          <li> <Link to={'/'}>Legado Gibbs</Link> </li>
           <li> <a href="http://globo.com">Pilotos</a> </li>
           <li> <a href="http://globo.com">Itens em promoção</a> </li>
         </ul>

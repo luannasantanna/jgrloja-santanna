@@ -91,6 +91,21 @@ p {
   border-radius: .5rem;
 }
 
+.tag__categary {
+  padding: .5rem 1rem;
+  color: var(--gray);
+  border: 1px solid var(--gray);
+  border-radius: 1rem;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.tag__categary:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
 @media (max-width: 1300px) {
   .container__content {
     gap: 1rem;
