@@ -9,7 +9,7 @@ const JGRCollection = [
             'm',
             'g'
         ],
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10],
+        stock: [1, 2, 3, 4, 5, 6,],
         category: 'Moletom'
     },
     {
@@ -28,7 +28,7 @@ const JGRCollection = [
             'm',
             'g'
         ],
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10],
+        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12],
         category: 'Moletom'
     },
     {
@@ -47,7 +47,7 @@ const JGRCollection = [
             'm',
             'g'
         ],
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10],
+        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14],
         category: 'Moletom'
     },
     {
@@ -65,7 +65,7 @@ const JGRCollection = [
             'm',
             'g'
         ],
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10]
+        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
     },
     {
         id: 5,
@@ -77,7 +77,7 @@ const JGRCollection = [
             'Side - the famous Las Vegas sign in black metallic pearl and metallic gold'
         ],
         price: 130,
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10],
+        stock: [1, 2, 3, 4, 5, 6,7, 8],
         category: 'Bonés'
     },
     {
@@ -90,14 +90,14 @@ const JGRCollection = [
             'JGR logo on Recatangle Leather patch'
         ],
         price: 105,
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10]
+        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     },
     {
         id: 7,
         name:  'JGR New Era 940 Trucker Whiteout',
         image: 'https://www.shopjgr.com/cdn/shop/files/jgr-white-1.jpg?v=1717011942',
         price: 105,
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10],
+        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
         category: 'Bonés'
     },
     {
@@ -111,14 +111,14 @@ const JGRCollection = [
             'JGR logo on clear credential holder'
         ],
         price: 50,
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10]
+        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14, 15]
     },
     {
         id: 9,
         name:  'JGR 2023 New Era 3930 Numbers Black Hat',
         image: 'https://www.shopjgr.com/cdn/shop/products/2023-JGR-Cloud-Hat_1.jpg?v=1696360648',
         price: 50,
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10],
+        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
         category: 'Bonés'
     },
     {
@@ -131,7 +131,7 @@ const JGRCollection = [
             'g'
         ],
         price: 50,
-        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10]
+        stock: [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
     }
 ];
 

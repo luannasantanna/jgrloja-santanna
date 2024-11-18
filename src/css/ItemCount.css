@@ -5,6 +5,10 @@
     padding: 1rem 0;
 }
 
+.item__count--icons i {
+    cursor: pointer;
+}
+
 .mensagem__info--limite {
     font-size: .8rem;
     font-weight: 500;

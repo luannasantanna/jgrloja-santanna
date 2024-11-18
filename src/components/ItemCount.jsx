@@ -1,28 +1,7 @@
-import { useState } from 'react';
 import '../css/BtnSecondary.css';
 import '../css/ItemCount.css';
 
-const ItemCount = ({ stock }) => {
-
-    const [contador, setContador] = useState(0);
-    const [mensagemDeLimite, setMensagemDeLimite] = useState();
-
-    function contagem(operacao) {
-
-        if (operacao === 'add') {
-            if (contador < stock.length) {
-                setContador(contador + 1);
-            } else {
-                setMensagemDeLimite('Não é possível adicionar mais itens');
-            }
-        }
-        else if (operacao === 'subtract') {
-            if (contador > 0) {
-                setContador(contador - 1);
-                setMensagemDeLimite('');
-            }
-        }
-    }
+const ItemCount = ({ mensagemDeLimite, contagem, contador}) => {
 
 
     return (
