@@ -3,7 +3,7 @@ import "../css/NavBar.css";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ( {otherPages} ) => {
 
   const [mostrarInput, setMostrarInput] = useState(false);
   const [btnClass, setBtnClass] = useState('');
@@ -16,7 +16,7 @@ const NavBar = () => {
 
 
   return (
-    <header>
+    <header className={otherPages ? 'navbar__other' : 'navbar__home'}>
       <Link to='/' className="logo">JGR | team store</Link>
       <nav>
         <ul>

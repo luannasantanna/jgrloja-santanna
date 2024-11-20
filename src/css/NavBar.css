@@ -8,7 +8,6 @@ header {
 }
 
 .logo {
-    color: var(--white);
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -16,19 +15,7 @@ header {
 nav  ul, .navbar__icons{
     display: flex;
     align-items: center;
-}
-
-nav ul li a {
-    font-size: 1rem;
-    font-weight: 500;
-    transition: .3s ease;
-    padding: .5rem 1rem;
-    color: var(--white);
-
-    &:hover {
-        color: var(--red);
-        font-weight: 700;
-    }
+    gap: 0.5em;
 }
 
 .navbar__icons form {
@@ -41,7 +28,6 @@ nav ul li a {
     padding: .5rem;
     border-right: 0;
     outline: none;
-    color: var(--white);
     background-color: transparent;
 }
 
@@ -54,13 +40,7 @@ nav ul li a {
 .navbar__icons button {
     background-color: transparent;
     border: none;
-    color: var(--white);
-    cursor: pointer;
     padding: .5rem;
-}
-
-.navbar__icons--item a:hover, .navbar__icons button:hover {
-    color: var(--red);
 }
 
 button.ativa {
@@ -77,8 +57,28 @@ button.ativa {
     margin-right: 1rem;
 }
 
-.navbar__icons--item a {
-    color: var(--white);
+.navbar__home {
+    .logo, .navbar__icons--item, a, button {
+        color: var(--white);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--red);
+            font-weight: 700;
+        }
+    }
+}
+
+.navbar__other {
+    .logo, .navbar__icons--item, a, button {
+        color: var(--black);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--red);
+            font-weight: 700;
+        }
+    }
 }
 
 @media (max-width: 800px) {

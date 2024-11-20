@@ -1,14 +1,21 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import HeroHearder from "../components/HeroHeader";
 import TagPromocao from "../components/TagPromocao";
 import ItemListContainer from "../pages/ItemListContainer";
 import ItemDetailContainer from "../pages/ItemDetailContainer";
+import NavBar from "../components/NavBar";
 
 export default function Router () {
+    const location = useLocation(); 
+    const homePage = location.pathname === '/';
+    const otherPages = location.pathname !== '/';
+
     return (
         <>
-            <HeroHearder />
-            <TagPromocao text={'Promoção válida até 27/03/2024'} />
+            {homePage && <HeroHearder />}
+            {homePage && <TagPromocao text={'Promoção válida até 27/03/2024'} />}
+
+            {otherPages && <NavBar otherPages={otherPages} />}
 
             <Routes>
                 <Route exact path="/" element={<ItemListContainer/>} />
