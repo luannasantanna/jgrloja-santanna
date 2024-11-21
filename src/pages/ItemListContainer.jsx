@@ -3,6 +3,7 @@ import TagTitulo from "./TagTitulo";
 import ItemList from "../components/ItemList";
 import JGRCollection from "../service/JGRCollection.mock";
 import { useParams } from "react-router-dom";
+import CircularWithValueLabel from "../components/Loading.tsx";
 
 const ItemListContainer = () => {
     const [produtos, setProdutos] = useState([]);
@@ -19,7 +20,7 @@ const ItemListContainer = () => {
         const promesaProdutos = new Promise((resolve) => {
             setTimeout(() => {
                 resolve(JGRCollection);
-            }, 5000);
+            }, 8000);
         });
 
         promesaProdutos
@@ -34,22 +35,25 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         if (filter) {
-          setProdutos(produtosFiltrados(filter));
+            setProdutos(produtosFiltrados(filter));
         } else {
-          setProdutos(JGRCollection);
+            setProdutos(JGRCollection);
         }
-      }, [filter]);
+    }, [filter]);
 
-    if (loading) {
-        return <div>Carregando ...</div>
-    };
 
     return (
         <section className='container'>
-            <TagTitulo titulo={'JGR Collection'} subtitulo={'2024'} />
-            <div className='container__content'>
-                <ItemList produtos={produtos} />
-            </div>
+            {loading ? (
+                <CircularWithValueLabel value={8000} />
+            ) : (
+                <>
+                    <TagTitulo titulo={'JGR Collection'} subtitulo={'2024'} />
+                    <div className='container__content'>
+                        <ItemList produtos={produtos} />
+                    </div>
+                </>
+            )}
         </section>
 
     );
