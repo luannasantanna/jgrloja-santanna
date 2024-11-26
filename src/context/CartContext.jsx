@@ -30,8 +30,17 @@ export default function CartProvider( {children} ) {
         return cart.reduce((acc, item) => acc + item.qta, 0);
     }
 
+    function cartTotal() {
+        return cart.reduce((acc, item) => acc + (item.qta * item.price), 0);
+    }
+
+    function removeItemCart(itemId) {
+        const updateCart = cart.filter(item => item.id !== itemId);
+        setCart(updateCart);
+    }
+
     return (
-        <CartContext.Provider value={{cart, addToCart, cartQta}}>
+        <CartContext.Provider value={{cart, addToCart, cartQta, cartTotal, removeItemCart}}>
             {children}
         </CartContext.Provider>
     );

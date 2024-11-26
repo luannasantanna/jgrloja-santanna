@@ -1,0 +1,27 @@
+.container__cart--item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 3rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--red);
+    border-radius: 1rem;
+}
+
+.container__cart--item img {
+    max-width: 15%;
+}
+
+.title__cart--item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+
+}
+
+.container__cart--item p {
+    font-size: 1rem;
+    color: var(--gray);
+}

@@ -10,7 +10,7 @@ const TagTitulo = ({ titulo, subtitulo }) => {
         <h3>{titulo}</h3>
       </div>
       <div>
-        <Link to={'/'}>
+        <Link to={'/category'}>
           <TagCategory text='Todos' />
         </Link>
         <Link to={'/category/Bonés'}>

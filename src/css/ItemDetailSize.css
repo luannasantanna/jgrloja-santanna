@@ -19,7 +19,7 @@
     cursor: pointer;
 }
 
-.container__size li:hover {
+.container__size li:hover, .tamanho--selecionado {
     background: var(--gradient);
     color: var(--white);
 }

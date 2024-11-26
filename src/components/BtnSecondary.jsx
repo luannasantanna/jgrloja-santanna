@@ -1,9 +1,17 @@
 import '../css/BtnSecondary.css';
 
-const BtnSecondary = ({text}) => {
+const BtnSecondary = ({text, onClick, icon}) => {
+    let iconClass = '';
+
+    if (icon === 'arrow') {
+        iconClass = 'ri-arrow-right-double-line';
+    } else if (icon === 'delete') {
+        iconClass = 'ri-delete-bin-line';
+    }
+
     return (
-        <button className='btn__secondary'>{text}
-        <i className="ri-arrow-right-double-line"></i>
+        <button onClick={onClick} className='btn__secondary'>{text}
+        {iconClass && <i className={iconClass}></i>}
         </button>
     );
 }
