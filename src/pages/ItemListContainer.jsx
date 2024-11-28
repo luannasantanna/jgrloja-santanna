@@ -1,51 +1,49 @@
 import { useEffect, useState } from "react";
 import TagTitulo from "./TagTitulo";
 import ItemList from "../components/ItemList";
-import JGRCollection from "../service/JGRCollection.mock";
 import { useParams } from "react-router-dom";
-import CircularWithValueLabel from "../components/Loading.tsx";
+import LoadingIndicador from "../components/Loading.tsx";
+import { collection, getDocs } from "firebase/firestore";
+import db from "../service/Firebase.js";
 
 const ItemListContainer = () => {
     const [produtos, setProdutos] = useState([]);
+    const [produtosParaFiltrar, setProdutosParaFiltrar] = useState([]);
     const [loading, setLoading] = useState(true);
     const { filter } = useParams();
 
-    const produtosFiltrados = (categoria) => {
-        return JGRCollection.filter((produto) =>
-            produto.category === categoria
-        );
-    };
-
     useEffect(() => {
-        const promesaProdutos = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(JGRCollection);
-            }, 8000);
-        });
+        setTimeout(() => {
+            const itemsColection = collection(db, 'JGRCollection');
 
-        promesaProdutos
-            .then((response) => {
-                setProdutos(response);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('erro ao carregar produtos', error);
-            });
+            getDocs(itemsColection)
+                .then((snapshot) => {
+                    const produtosList = snapshot.docs.map((item) => ({ ...item.data(), id: item.id }));
+                    setProdutos(produtosList);
+                    setProdutosParaFiltrar(produtosList);
+                    setLoading(false);
+                })
+                .catch((error) => {
+                    console.log('error ao carregar os produtos', error);
+                })
+        }, 6000);
     }, []);
+
 
     useEffect(() => {
         if (filter) {
-            setProdutos(produtosFiltrados(filter));
+            const filtrados = produtosParaFiltrar.filter((produto) => produto.category === filter);
+            setProdutos(filtrados);
         } else {
-            setProdutos(JGRCollection);
+            setProdutos(produtosParaFiltrar);
         }
-    }, [filter]);
+    }, [filter, produtosParaFiltrar]);
 
 
     return (
         <section className='container'>
             {loading ? (
-                <CircularWithValueLabel value={8000} />
+                <LoadingIndicador />
             ) : (
                 <>
                     <TagTitulo titulo={'JGR Collection'} subtitulo={'2024'} />

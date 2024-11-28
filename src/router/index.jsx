@@ -21,7 +21,7 @@ export default function Router () {
             <Routes>
                 <Route exact path="/" element={<ItemListContainer/>} />
                 <Route exact path="/category/:filter?" element={<ItemListContainer />} />
-                <Route exact path="/JGR-produtos/:id" element={<ItemDetailContainer />} />
+                <Route exact path="/JGR-produtos/:id?" element={<ItemDetailContainer />} />
                 <Route exact path="/cart" element={<Cart/>} />
             </Routes>
         </>

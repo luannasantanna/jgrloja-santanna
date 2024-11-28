@@ -39,7 +39,7 @@ function CircularProgressWithLabel(
   );
 }
 
-export default function CircularWithValueLabel() {
+export default function LoadingIndicador() {
   const [progress, setProgress] = React.useState(10);
 
   React.useEffect(() => {
