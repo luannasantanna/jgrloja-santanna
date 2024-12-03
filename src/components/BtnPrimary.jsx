@@ -1,8 +1,8 @@
 import '../css/BtnPrimary.css';
 
-const BtnSecondary = ({ text }) => {
+const BtnSecondary = ({ text, onClick }) => {
     return (
-        <button className='btn__primary'>{text}</button>
+        <button onClick={onClick} className='btn__primary'>{text}</button>
     );
 }
 

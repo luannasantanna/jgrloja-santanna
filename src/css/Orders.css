@@ -1,0 +1,14 @@
+.order__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.order__form input {
+    width: 30%;
+    border: 1px solid var(--red);
+    border-radius: .5rem;
+    padding: .5rem;
+}

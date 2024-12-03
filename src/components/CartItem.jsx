@@ -15,7 +15,7 @@ const CartItem = ({ item }) => {
             </div>
             <div>
                 <p>Quantidade: {item.qta}</p>
-                <p>Tamanho: {item.size}</p>
+                <p>{!item.size ? "Tamanho único" : `Tamanho: ${item.size}`}</p>
             </div>
             <BtnSecondary icon={'delete'} onClick={() => removeItemCart(item.id)} text={'remove'}/>
         </div>

@@ -30,7 +30,7 @@ const Cart = () => {
             <Link to={'/category'}>
                 <BtnSecondary text={'Continuar comprando'} />
             </Link>
-            <Link>
+            <Link to={'/compra'}>
                 <BtnPrimary text={'Finalizar Compra'} />
             </Link>
         </>

@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-// import { addDoc, collection, getFirestore } from "firebase/firestore";
+// import { addDoc, collection } from "firebase/firestore";
 // import JGRCollection from "./JGRCollection.mock";
 
 // TODO: Add SDKs for Firebase products that you want to use

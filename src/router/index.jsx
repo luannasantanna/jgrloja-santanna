@@ -5,6 +5,7 @@ import ItemListContainer from "../pages/ItemListContainer";
 import ItemDetailContainer from "../pages/ItemDetailContainer";
 import NavBar from "../components/NavBar";
 import Cart from "../pages/Cart";
+import OrderForm from "../pages/Orders";
 
 export default function Router () {
     const location = useLocation(); 
@@ -23,6 +24,7 @@ export default function Router () {
                 <Route exact path="/category/:filter?" element={<ItemListContainer />} />
                 <Route exact path="/JGR-produtos/:id?" element={<ItemDetailContainer />} />
                 <Route exact path="/cart" element={<Cart/>} />
+                <Route exact path="/compra" element={<OrderForm />} />
             </Routes>
         </>
     );
