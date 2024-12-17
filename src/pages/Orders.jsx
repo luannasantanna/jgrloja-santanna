@@ -4,11 +4,18 @@ import { addDoc, collection } from "firebase/firestore";
 import db from "../service/Firebase";
 import BtnPrimary from "../components/BtnPrimary";
 import "../css/Orders.css";
+import BasicModal from "../components/Modal.tsx";
 
 const OrderForm = () => {
   const [buyer, setBuyer] = useState({ name: "", phone: "", email: "", address: "" });
   const { cart, cartTotal } = useContext(CartContext);
   const [orderId, setOrderId] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setBuyer({ name: "", phone: "", email: "", address: "" });
+};
 
   const sendOrder = (e) => {
     e.preventDefault();
@@ -17,23 +24,21 @@ const OrderForm = () => {
       buyer,
       itens: cart.map(item => {
         if (item.size === undefined) {
-            const { size, ...rest } = item;
-            return rest;
+          const { size, ...rest } = item;
+          return rest;
         }
-        return item; 
-    }),
+        return item;
+      }),
       total: cartTotal(),
     };
-
-    console.log("Order enviada para o Firebase:", order);
 
     try {
       const ordersCollection = collection(db, 'orders');
       addDoc(ordersCollection, order).then((doc) => {
         setOrderId(doc.id);
-        console.log('Pedido criado com sucesso:', doc.id)
+        setModalOpen(true);
       });
-    } catch(error) {
+    } catch (error) {
       console.log(error);
     }
 
@@ -75,7 +80,8 @@ const OrderForm = () => {
         <BtnPrimary onClick={sendOrder} text={'Finalizar compra'} />
       </form>
 
-      {orderId && <p>O número do seu pedido é: {orderId}</p>}
+      <BasicModal open={modalOpen} onClose={closeModal} orderId={orderId} />
+
     </div>
   );
 };

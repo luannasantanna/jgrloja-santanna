@@ -29,7 +29,7 @@ a {
   text-decoration: none;
   color: var(--black);
   cursor: pointer;
-  padding: .5rem;
+  /* padding: .5rem; */
 }
 
 i {
@@ -58,6 +58,15 @@ p {
   font-weight: 500;
   line-height: 140%;
 }
+
+.mb-32 {
+  margin-bottom: 2rem;
+}
+
+.mlr-16 {
+  margin: 0 1rem;
+}
+
 
 .container {
   width: 100%;

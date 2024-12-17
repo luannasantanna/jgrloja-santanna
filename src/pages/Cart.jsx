@@ -26,13 +26,15 @@ const Cart = () => {
                     <CartItem key={item.id} item={item} />
                 ))}
             </div>
-            <h3>Total: R${cartTotal()}</h3>
-            <Link to={'/category'}>
+            <h3 className="mb-32">Total: R${cartTotal()}</h3>
+
+            <Link to={'/category'} className="mlr-16">
                 <BtnSecondary text={'Continuar comprando'} />
             </Link>
-            <Link to={'/compra'}>
+            <Link to={'/compra'} className="mlr-16">
                 <BtnPrimary text={'Finalizar Compra'} />
             </Link>
+
         </>
     );
 }
